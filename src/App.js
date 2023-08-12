@@ -41,6 +41,7 @@ class App extends React.Component {
               key={ticket.id}
               id={ticket.id}
               title={ticket.title}
+              tag={ticket.tag}
               priority={ticket.priority}
               userId={ticket.userId}
             /></div>

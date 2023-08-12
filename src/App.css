@@ -1,11 +1,15 @@
+
 /* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Mono&display=swap');
+
 *{
   background-color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 .App {
   text-align: center;
   margin: auto;
-  padding: 20px;
+
 }
 .colour{
   background-color: #f4f4f4;
@@ -16,13 +20,3 @@
   justify-content: center;
   grid-template-columns: repeat(5,1fr);
 }
-
-.card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-  max-width: 300px;
-  background-color: #fff;
-
-}
-

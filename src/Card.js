@@ -1,12 +1,16 @@
 // Card.js
 import React from "react";
-import "./App.css";
+import "./Card.css";
 
-const Card = ({ title, priority, userId }) => (
+const Card = ({ title, id, tag, priority, userId }) => (
   <div className="card">
-    <h2>Title: {title}</h2>
-    <p>Priority: {priority}</p>
-    <p>User ID: {userId}</p>
+    <div className="card-content">
+      <p className="card-id">{id} <br /></p> 
+      <h4 className="card-title "><b><span className="bullet-icon">•</span>{title}</b><br /></h4>
+      <div className="card-tag">
+        <span >•</span> {tag}
+      </div>
+    </div>
   </div>
 );
 
