@@ -1,2 +1,2 @@
 # ReactAssignment
-Making a interactive kaban board application using react
+Making a interactive kanban board application using react
