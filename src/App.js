@@ -1,6 +1,8 @@
-import React from "react";
-import Card from "./Card";
-import "./App.css";
+import React from 'react';
+import Card from './Card';
+import ButtonGroup from './ButtonGroup';
+import './App.css';
+import KanbanBoard from './KanbanBoard';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,11 +11,13 @@ class App extends React.Component {
     this.state = {
       tickets: [],
       DataisLoaded: false,
+      groupOption: 'status', // Default grouping by status
+      orderOption: 'priority', // Default ordering by priority
     };
   }
 
   componentDidMount() {
-    fetch("https://apimocha.com/quicksell/data")
+    fetch('https://apimocha.com/quicksell/data')
       .then((res) => res.json())
       .then((json) => {
         this.setState({
@@ -22,32 +26,29 @@ class App extends React.Component {
         });
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       });
   }
 
   render() {
-    const { DataisLoaded, tickets } = this.state;
+    const { DataisLoaded, tickets, groupOption, orderOption } = this.state;
 
     if (!DataisLoaded) return <div>Loading...</div>;
 
     return (
       <div className="App">
         <h1>Kanban Board</h1>
-        <div className="card-container">
-          {tickets.map((ticket) => (
-            <div className=" colour">
-            <Card
-              key={ticket.id}
-              id={ticket.id}
-              title={ticket.title}
-              tag={ticket.tag}
-              priority={ticket.priority}
-              userId={ticket.userId}
-            /></div>
-          ))}
-
-        </div>
+        <ButtonGroup
+          groupOption={groupOption}
+          setGroupOption={(option) => this.setState({ groupOption: option })}
+          orderOption={orderOption}
+          setOrderOption={(option) => this.setState({ orderOption: option })}
+        />
+        <KanbanBoard
+          tickets={tickets}
+          groupOption={groupOption}
+          orderOption={orderOption}
+        />
       </div>
     );
   }

@@ -2,7 +2,7 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({ title, id, tag, priority, userId }) => (
+const Card = ({ title, id, tag, priority, userId, status }) => (
   <div className="card">
     <div className="card-content">
       <p className="card-id">{id} <br /></p> 
@@ -10,6 +10,8 @@ const Card = ({ title, id, tag, priority, userId }) => (
       <div className="card-tag">
         <span >•</span> {tag}
       </div>
+      <p className="card-id">{priority}  {userId}  {status} <br /></p> 
+      
     </div>
   </div>
 );
