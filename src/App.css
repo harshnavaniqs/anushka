@@ -1,0 +1,28 @@
+/* App.css */
+*{
+  background-color: #fff;
+}
+.App {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+}
+.colour{
+  background-color: #f4f4f4;
+}
+.card-container {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: repeat(5,1fr);
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  max-width: 300px;
+  background-color: #fff;
+
+}
+
