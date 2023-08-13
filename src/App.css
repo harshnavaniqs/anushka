@@ -14,9 +14,9 @@
 .colour{
   background-color: #f4f4f4;
 }
-.card-container {
+/* .card-container {
   display: grid;
   flex-wrap: wrap;
   justify-content: center;
   grid-template-columns: repeat(5,1fr);
-}
+} */

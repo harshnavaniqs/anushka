@@ -20,7 +20,7 @@ function ButtonGroup({ groupOption, setGroupOption, orderOption, setOrderOption 
         >
           <option value="status">By Status</option>
           <option value="user">By User</option>
-          <option value="priority">By Priority</option>
+          <option value="prioritygrouping">By Priority</option>
         </select>
       </div>
       <div className="dropdown">
