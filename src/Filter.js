@@ -1,10 +1,9 @@
 import React from 'react';
 import Card from './Card';
 
-function KanbanBoard({ tickets, groupOption, orderOption }) {
+function Filter({ tickets, groupOption, orderOption }) {
   let groupedTickets = [...tickets];
 
-  // Grouping logic based on selected option
   if (groupOption === 'status') {
     // Group by status
     groupedTickets = tickets.reduce((groups, ticket) => {
@@ -32,8 +31,7 @@ function KanbanBoard({ tickets, groupOption, orderOption }) {
     }, {});
   }
 
-  // Apply ordering logic based on selected option
-  const orderedGroupedTickets = Object.keys(groupedTickets).reduce((sorted, key) => {
+    const orderedGroupedTickets = Object.keys(groupedTickets).reduce((sorted, key) => {
     console.log(typeof(groupedTickets)) ;
     sorted[key] = groupedTickets[key].sort((a, b) => {
       if (orderOption === 'priority') {
@@ -47,10 +45,10 @@ function KanbanBoard({ tickets, groupOption, orderOption }) {
   }, {});
 
   return (
-    <div className="KanbanBoard d-flex">
+    <div className="Filter d-flex">
       {Object.keys(orderedGroupedTickets).map((group) => (
         <div key={group} className="group">
-          <h2>{getgroupname(group)}</h2>      
+          <h2 className="columnname">{getgroupname(group)}</h2>      
           <div className="card-container">
             {orderedGroupedTickets[group].map((ticket) => (
               <Card
@@ -59,7 +57,7 @@ function KanbanBoard({ tickets, groupOption, orderOption }) {
                 id={ticket.id}
                 tag={ticket.tag}
                 priority={ticket.priority}
-                userId={ticket.userId}
+                userId={ticket.userId}    
               />
             ))}
           </div>
@@ -79,7 +77,17 @@ function getgroupname(group){
   return "High";
   else if(group==4)
   return"Urgent";
-else
-return group;
+  else if(group== 'usr-1')
+  return "Anoop sharma"
+  else if(group== 'usr-2')
+  return "Yogesh"
+  else if(group== 'usr-3')
+  return "Shankar Kumar"
+  else if(group== 'usr-4')
+  return "Ramesh"
+  else if(group== 'usr-5')
+  return "Suresh"
+  else
+  return group;
 }
-export default KanbanBoard;
+export default Filter;

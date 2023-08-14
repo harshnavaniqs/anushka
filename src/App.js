@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import ButtonGroup from './ButtonGroup';
+import DropDown from './DropDown';
 import './App.css';
-import KanbanBoard from './KanbanBoard';
+import Filter from './Filter';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,9 +11,10 @@ class App extends React.Component {
     this.state = {
       tickets: [],
       DataisLoaded: false,
-      groupOption: 'status', // Default grouping by status
-      orderOption: 'priority', // Default ordering by priority
+      groupOption: 'status', 
+      orderOption: 'priority', 
     };
+   
   }
 
   componentDidMount() {
@@ -37,14 +38,14 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>Kanban Board</h1>
-        <ButtonGroup
+        {/* <h1>Kanban Board</h1> */}
+        <DropDown className='nav'
           groupOption={groupOption}
           setGroupOption={(option) => this.setState({ groupOption: option })}
           orderOption={orderOption}
           setOrderOption={(option) => this.setState({ orderOption: option })}
         />
-        <KanbanBoard
+        <Filter
           tickets={tickets}
           groupOption={groupOption}
           orderOption={orderOption}
