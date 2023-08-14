@@ -67,25 +67,25 @@ function Filter({ tickets, groupOption, orderOption }) {
   );
 }
 function getgroupname(group){
-  if (group == 0)
+  if (group === '0')
   return "No priority";
-  else if(group == 1)
+  else if(group === '1')
   return "Low";
-  else if(group==2 )
+  else if(group==='2' )
   return "Meduim";
-  else if(group==3 )
+  else if(group==='3' )
   return "High";
-  else if(group==4)
+  else if(group==='4')
   return"Urgent";
-  else if(group== 'usr-1')
+  else if(group=== 'usr-1')
   return "Anoop sharma"
-  else if(group== 'usr-2')
+  else if(group=== 'usr-2')
   return "Yogesh"
-  else if(group== 'usr-3')
+  else if(group=== 'usr-3')
   return "Shankar Kumar"
-  else if(group== 'usr-4')
+  else if(group=== 'usr-4')
   return "Ramesh"
-  else if(group== 'usr-5')
+  else if(group=== 'usr-5')
   return "Suresh"
   else
   return group;
